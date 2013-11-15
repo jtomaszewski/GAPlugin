@@ -19,5 +19,8 @@
 - (void) trackEvent:(CDVInvokedUrlCommand*)command;
 - (void) trackPage:(CDVInvokedUrlCommand*)command;
 - (void) setVariable:(CDVInvokedUrlCommand*)command;
+- (void) trackSocial:(CDVInvokedUrlCommand*) command;
+- (void) trackEcommerceTransaction:(CDVInvokedUrlCommand*) command;
+- (void) trackEcommerceItem:(CDVInvokedUrlCommand*) command;
 
 @end
