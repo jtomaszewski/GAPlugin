@@ -44,7 +44,9 @@
 
         <source-file src="src/ios/GAPlugin.m" />
         <source-file src="src/ios/libGoogleAnalyticsServices.a" framework="true" />
-
+	
+	<header-file src="src/ios/GAIDictionaryBuilder.h" />
+	<header-file src="src/ios/GAIFields.h" />
         <header-file src="src/ios/GAITransactionItem.h" />
         <header-file src="src/ios/GAITransaction.h" />
         <header-file src="src/ios/GAITracker.h" />
