@@ -203,7 +203,7 @@
 {
 //    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
 //    [tracker close];
-    [super dealloc];
+//    [super dealloc]; - No longer needed with arc
 }
 
 @end
