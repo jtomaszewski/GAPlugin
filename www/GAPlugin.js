@@ -56,15 +56,23 @@
         return cordovaRef.exec(success, fail, 'GAPlugin', 'trackEcommerceItem', [transactionID, productName, productSKU, productCategory, productPrice, productQuantity,currencyCode]);
     };
 
-    if (cordovaRef)
-    {
-        cordovaRef.addConstructor(function() {
-            if(!window.plugins) {
-                window.plugins = {};
-            }
-            if(!window.plugins.gaPlugin) {
-                window.plugins.gaPlugin = new GAPlugin();
-            }
-        });
+    if (cordovaRef && cordovaRef.addConstructor) {
+        cordovaRef.addConstructor(init);
     }
+    else {
+        init();
+    }
+
+    function init () {
+        if(!window.plugins) {
+            window.plugins = {};
+        }
+        if(!window.plugins.gaPlugin) {
+            window.plugins.gaPlugin = new GAPlugin();
+        }
+    }
+    if (typeof module != 'undefined' && module.exports) {
+        module.exports = new GAPlugin();
+    }
+        
 })(); /* End of Temporary Scope. */
