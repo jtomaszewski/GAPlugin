@@ -50,6 +50,7 @@
         <header-file src="src/ios/GAITracker.h" />
         <header-file src="src/ios/GAITrackedViewController.h" />
         <header-file src="src/ios/GAI.h" />
+        <header-file src="src/ios/GAILogger.h" />
         <header-file src="src/ios/GAPlugin.h" />
 
         <framework src="CoreData.framework" />
