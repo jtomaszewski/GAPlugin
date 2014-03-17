@@ -45,7 +45,7 @@
         </config-file>
 
         <source-file src="src/ios/GAPlugin.m" />
-        <source-file src="src/ios/GoogleAnalytics.a" framework="true" />
+        <source-file src="src/ios/libGoogleAnalyticsServices.a" framework="true" />
 
         <header-file src="src/ios/GAITransactionItem.h" />
         <header-file src="src/ios/GAITransaction.h" />
