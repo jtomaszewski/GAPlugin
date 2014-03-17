@@ -44,18 +44,19 @@
 
         <source-file src="src/ios/GAPlugin.m" />
         <source-file src="src/ios/libGoogleAnalyticsServices.a" framework="true" />
-	
-	<header-file src="src/ios/GAIDictionaryBuilder.h" />
-	<header-file src="src/ios/GAIFields.h" />
-        <header-file src="src/ios/GAITransactionItem.h" />
-        <header-file src="src/ios/GAITransaction.h" />
-        <header-file src="src/ios/GAITracker.h" />
-        <header-file src="src/ios/GAITrackedViewController.h" />
-        <header-file src="src/ios/GAI.h" />
-        <header-file src="src/ios/GAILogger.h" />
+
         <header-file src="src/ios/GAPlugin.h" />
+
+        <header-file src="src/ios/GAI.h" />
+        <header-file src="src/ios/GAIDictionaryBuilder.h" />
+        <header-file src="src/ios/GAIFields.h" />
+        <header-file src="src/ios/GAILogger.h" />
+        <header-file src="src/ios/GAITrackedViewController.h" />
+        <header-file src="src/ios/GAITracker.h" />
 
         <framework src="CoreData.framework" />
         <framework src="SystemConfiguration.framework" />
+        <framework src="libz.dylib" />
+        <framework src="AdSupport.framework" />
     </platform>
 </plugin>
