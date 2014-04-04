@@ -48,8 +48,8 @@
         return cordovaRef.exec(success, fail, 'GAPlugin', 'trackSocial', [network, action, target]);
     };
 
-    GAPlugin.prototype.trackEcommerceTransaction =function(success, fail, affiliation, revenue, tax, shipping, currencyCode){
-        return cordovaRef.exec(success, fail, 'GAPlugin', 'trackEcommerceTransaction', [affiliation, revenue, tax, shipping, currencyCode]);
+    GAPlugin.prototype.trackEcommerceTransaction =function(success, fail, transactionID, affiliation, revenue, tax, shipping, currencyCode){
+        return cordovaRef.exec(success, fail, 'GAPlugin', 'trackEcommerceTransaction', [transactionID, affiliation, revenue, tax, shipping, currencyCode]);
     };
 
     GAPlugin.prototype.trackEcommerceItem =function(success, fail, transactionID, productName, productSKU, productCategory, productPrice, productQuantity,currencyCode){
