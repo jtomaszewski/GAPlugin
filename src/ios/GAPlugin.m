@@ -132,12 +132,12 @@
     
     NSString *callbackId = command.callbackId;
     
-    NSString *transactionId;
-    NSString *affiliation;
-    NSNumber *revenue;
-    NSNumber *tax;
-    NSNumber *shipping;
-    NSString *currencyCode;
+    NSString *transactionId = [command.arguments objectAtIndex:0];
+    NSString *affiliation   = [command.arguments objectAtIndex:1];
+    NSNumber *revenue       = [command.arguments objectAtIndex:2];
+    NSNumber *tax           = [command.arguments objectAtIndex:3];
+    NSNumber *shipping      = [command.arguments objectAtIndex:4];
+    NSString *currencyCode  = [command.arguments objectAtIndex:5];
     
     if(inited)
     {
@@ -145,7 +145,12 @@
         NSError *error=nil;
         id tracker=[[GAI sharedInstance] defaultTracker];
         @try {
-            [tracker send:[[GAIDictionaryBuilder createTransactionWithId:(NSString *)transactionId affiliation:(NSString *)affiliation revenue:(NSNumber *)revenue tax:(NSNumber *)tax shipping:(NSNumber *)shipping currencyCode:(NSString *)currencyCode] build]];
+            [tracker send:[[GAIDictionaryBuilder createTransactionWithId:(NSString *)transactionId
+                                                             affiliation:(NSString *)affiliation
+                                                                 revenue:(NSNumber *)revenue
+                                                                     tax:(NSNumber *)tax
+                                                                shipping:(NSNumber *)shipping
+                                                            currencyCode:(NSString *)currencyCode] build]];
             [self successWithMessage: [NSString stringWithFormat:@"trackEcommerceTransaction: transactionId=%@, affiliation=%@, revenue=%@, tax=%@, shipping=%@, currencyCode=%@", transactionId, affiliation, revenue, tax, shipping, currencyCode] toID:callbackId];
         }
         @catch (NSException *exception) {
@@ -158,13 +163,13 @@
 
 - (void) trackEcommerceItem:(CDVInvokedUrlCommand*) command{
     NSString *callbackId = command.callbackId;
-    NSString *transactionId;
-    NSString *name;
-    NSString *sku;
-    NSString *category;
-    NSNumber *price;
-    NSNumber *quantity;
-    NSString *currencyCode;
+    NSString *transactionId = [command.arguments objectAtIndex:0];
+    NSString *name          = [command.arguments objectAtIndex:1];
+    NSString *sku           = [command.arguments objectAtIndex:2];
+    NSString *category      = [command.arguments objectAtIndex:3];
+    NSNumber *price         = [command.arguments objectAtIndex:4];
+    NSNumber *quantity      = [command.arguments objectAtIndex:5];
+    NSString *currencyCode  = [command.arguments objectAtIndex:6];
 
     if(inited)
     {              
@@ -172,7 +177,13 @@
         NSError *error=nil;
         id tracker=[[GAI sharedInstance] defaultTracker];
         @try {
-            [tracker send:[[GAIDictionaryBuilder createItemWithTransactionId:transactionId name:name sku:sku category:category price:price quantity:quantity currencyCode:currencyCode] build]];
+            [tracker send:[[GAIDictionaryBuilder createItemWithTransactionId:transactionId
+                                                                        name:name
+                                                                         sku:sku
+                                                                    category:category
+                                                                       price:price
+                                                                    quantity:quantity
+                                                                currencyCode:currencyCode] build]];
             [self successWithMessage: [NSString stringWithFormat:@"trackEcommerceItem: transactionId=%@, name=%@, sku=%@, category=%@, price=%@, quantity=%@, currencyCode=%@", transactionId, name, sku, category, price, quantity, currencyCode] toID:callbackId];
         }
         @catch (NSException *exception) {
