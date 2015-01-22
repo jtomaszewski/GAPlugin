@@ -49,7 +49,6 @@
 
     <source-file src="src/android/GAPlugin.java" target-dir="src/com/adobe/plugins" />
     <source-file src="src/android/libGoogleAnalyticsV2.jar" target-dir="libs" />
-    <source-file src="src/android/libGoogleAnalyticsServicesV3.jar" target-dir="libs" />
   </platform>
 
   <platform name="ios">
